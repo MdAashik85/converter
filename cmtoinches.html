@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+    <style>
+        body
+        {
+            background-image:url("abstract-1920x1080-3d-colorful-8k-21247.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .form
+        {
+            background-image:url("abstract-1920x1080-3d-colorful-8k-21247.jpg");
+            align-items: center;
+            height:230px;
+            width:180px;
+            display:flex;
+            flex-direction: column;
+            padding:70px;
+            border-radius: 20px;
+            margin:500px;
+            margin-top:90px;
+        }
+        .form:hover
+        {
+            opacity:0px;
+            cursor:pointer;
+        }
+        #h
+        {
+            color:aliceblue;
+            margin-top:-10px;
+        }
+        input
+        {
+            border-radius: 10px;
+            padding:10px;
+            border:0px;
+            margin-top:10px;
+        }
+        #df
+        {
+            border-radius:10px;
+            padding:10px;
+            border:0px;
+            margin-left:45%;
+            position: relative;
+            top:-620px;
+        }
+        #df:hover,#cf:hover
+        {
+            cursor:pointer;
+            background-color:rgb(54, 49, 136);
+            color:white;
+        }
+        #cf
+        {
+            border-radius:10px;
+            padding:10px;
+            border:0px;
+            margin-left:44.5%;
+            position: relative;
+            top:-620px;
+        }
+        #result1
+        {
+            position:relative;
+            bottom:790px;
+            left:44.5%;
+            color:aliceblue;
+        }
+        #result2
+        {
+            position:relative;
+            bottom:780px;
+            left:43%;
+            color:aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="idtable">
+        <div class="form">
+            <h2 id="h">Converter</h2>
+            <input type="text" id="cm" placeholder="Enter Centimeter or Celcius"><br>
+        </div>
+        <div id>
+            <button id="df" type="submit" onclick="convertcm()">Convert to inches</button><br><br>
+            <button id="cf" onclick="convertcf()">Convert to Farenheit</button>
+        </div>   
+        <h3 id="result1">
+        </h3>
+        <h3 id="result2"></h3>
+    </div>
+    <script>
+       function convertcm()
+       {
+        const cmVal = Number(document.getElementById("cm").value)
+        const inchVal = cmVal/2.54
+        const result = document.getElementById("result1")
+        result.innerHTML = "Ans: "+inchVal.toFixed(3)+" Inches"
+       } 
+       function convertcf()
+       {
+        const cel = Number(document.getElementById("cm").value)
+        const far = cel*(9/5)
+        const result = document.getElementById("result2")
+        result.innerHTML = "Ans: "+far.toFixed(2)+" Farenheit"
+       }
+    </script>
+</body>
+</html>
