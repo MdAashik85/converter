@@ -106,7 +106,7 @@
        function convertcf()
        {
         const cel = Number(document.getElementById("cm").value)
-        const far = cel*(9/5)
+        const far = (cel*(9/5))+32
         const result = document.getElementById("result2")
         result.innerHTML = "Ans: "+far.toFixed(2)+" Farenheit"
        }
